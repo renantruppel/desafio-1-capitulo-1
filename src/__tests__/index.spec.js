@@ -205,8 +205,8 @@ describe('Todos', () => {
 
     expect(response.body.error).toBeTruthy();
   });
-
-  it('should be able to create a new user', async() => {
+  
+  it('users should be able to create a new user', async() => {
     const userCreated = await request(app)
     .post('/users')
     .send({
@@ -226,7 +226,7 @@ describe('Todos', () => {
       expect(userCreated.status).toBe(201);
   });
 
-  it('should not be able to create a new user when username already exists', async() => {
+  it('users should not be able to create a new user when username already exists', async() => {
     const userRepeated = await request(app)
     .post('/users')
     .send({
@@ -238,21 +238,4 @@ describe('Todos', () => {
     expect(userRepeated.body.error).toBeTruthy();
   });
 
-  it('should be able to show user data', async () => {
-    const newUser = await request(app)
-      .post('/users')
-      .send({
-        name: 'John Doe',
-        username: 'johndoe3'
-      })
-      .expect(201);
-    /*const response = await request(app)
-      .get(`/users/${userData.id}`);
-
-    expect(response.body).toMatchObject({
-      name: 'John Doe',
-      username: 'johndoe3',
-      todos: []
-    })*/
-  });
 });
