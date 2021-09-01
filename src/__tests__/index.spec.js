@@ -237,4 +237,22 @@ describe('Todos', () => {
 
     expect(userRepeated.body.error).toBeTruthy();
   });
+
+  it('should be able to show user data', async () => {
+    const newUser = await request(app)
+      .post('/users')
+      .send({
+        name: 'John Doe',
+        username: 'johndoe3'
+      })
+      .expect(201);
+    /*const response = await request(app)
+      .get(`/users/${userData.id}`);
+
+    expect(response.body).toMatchObject({
+      name: 'John Doe',
+      username: 'johndoe3',
+      todos: []
+    })*/
+  });
 });
