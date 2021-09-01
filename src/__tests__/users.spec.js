@@ -5,7 +5,7 @@ const { app } = require('../');
 
 
 describe('Users', () => {
-    it('Users should be able to create a new user', async() => {
+    it('should be able to create a new user', async() => {
         const userCreated = await request(app)
         .post('/users')
         .send({
@@ -25,7 +25,7 @@ describe('Users', () => {
           expect(userCreated.status).toBe(201);
       });
     
-      it('Users should be able to create a new user', async() => {
+      it('should be able to create a new user', async() => {
         const userRepeated = await request(app)
         .post('/users')
         .send({
