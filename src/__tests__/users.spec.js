@@ -1,11 +1,11 @@
-const request = require('supertest');
+/*const request = require('supertest');
 const { validate } = require('uuid');
 
 const { app } = require('../');
 
 
 describe('Users', () => {
-    it('should be able to create a new user', async() => {
+    it("should be able to create a new user", async() => {
         const userCreated = await request(app)
         .post('/users')
         .send({
@@ -25,7 +25,7 @@ describe('Users', () => {
           expect(userCreated.status).toBe(201);
       });
     
-      it('should be able to create a new user', async() => {
+      it("should be able to create a new user", async() => {
         const userRepeated = await request(app)
         .post('/users')
         .send({
@@ -36,4 +36,4 @@ describe('Users', () => {
     
         expect(userRepeated.body.error).toBeTruthy();
       });
-    })
+    })*/
